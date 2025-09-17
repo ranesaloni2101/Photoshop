@@ -15,7 +15,8 @@
     }
     /* Hero Section */
     .hero {
-      background: url('hero-banner.jpg') center/cover no-repeat;
+      height: 100px;
+      background-color: bisque;
       color: white;
       text-align: center;
       padding: 120px 20px;
@@ -45,7 +46,8 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Photoshop</a>
+      <a class="navbar-brand fw-bold" href="#">
+        <img src="logo.jpg" alt="Logo" width="40" height="40" class="me-2">Photoshop</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -65,9 +67,8 @@
   <!-- Hero Section -->
   <section class="hero d-flex align-items-center justify-content-center" id="home">
     <div class="hero-content">
-      <h1 class="display-4 fw-bold">Master Photoshop with Ease</h1>
+      <h1 class="display-1 fw-bold">Master Photoshop with Ease</h1>
       <p class="lead">Learn from basics to advanced with videos, notes & assignments</p>
-      <a href="#topics" class="btn btn-primary btn-lg mt-3">Start Learning</a>
     </div>
   </section>
 
@@ -93,6 +94,72 @@
     <!-- Topic Buttons -->
     <div id="topics-container" class="d-flex flex-wrap justify-content-center gap-2"></div>
   </section>
+
+  <!-- Photoshop Toolbar Section -->
+<section class="container my-5" id="toolbar-section" style="display:none;">
+  <h3 class="text-center mb-4">Photoshop Tools</h3>
+  <div class="d-flex flex-wrap justify-content-center gap-3">
+    <button class="btn btn-outline-dark tool-btn" data-tool="rectangular">
+      ▭ Rectangular Marquee
+    </button>
+    <button class="btn btn-outline-dark tool-btn" data-tool="elliptical">
+      ◯ Elliptical Marquee
+    </button>
+    <button class="btn btn-outline-dark tool-btn" data-tool="single-row">
+      ─ Single Row
+    </button>
+    <button class="btn btn-outline-dark tool-btn" data-tool="single-column">
+      │ Single Column
+    </button>
+  </div>
+
+  <!-- Tool Steps -->
+  <div class="mt-4 p-3 border rounded bg-light" id="tool-steps">
+    <h5>Select a tool to see steps.</h5>
+  </div>
+</section>
+<!-- Layers Toolbar Section -->
+<section class="container my-5" id="layers-toolbar-section" style="display:none;">
+  <h3 class="text-center mb-4">Working with Layers Tools</h3>
+  <div class="d-flex flex-wrap justify-content-center gap-2">
+    <button class="btn btn-outline-dark layers-tool" data-tool="move">Move Tool</button>
+    <button class="btn btn-outline-dark layers-tool" data-tool="marquee">Marquee Tools</button>
+    <button class="btn btn-outline-dark layers-tool" data-tool="lasso">Lasso Tools</button>
+    <button class="btn btn-outline-dark layers-tool" data-tool="quick-selection">Quick Selection Tool</button>
+    <button class="btn btn-outline-dark layers-tool" data-tool="magic-wand">Magic Wand Tool</button>
+    <button class="btn btn-outline-dark layers-tool" data-tool="brush">Brush Tool</button>
+    <button class="btn btn-outline-dark layers-tool" data-tool="eraser">Eraser Tool</button>
+    <button class="btn btn-outline-dark layers-tool" data-tool="gradient">Gradient Tool</button>
+    <button class="btn btn-outline-dark layers-tool" data-tool="paint-bucket">Paint Bucket Tool</button>
+    <button class="btn btn-outline-dark layers-tool" data-tool="text">Text Tool</button>
+    <button class="btn btn-outline-dark layers-tool" data-tool="shapes">Shape Tools</button>
+  </div>
+
+  <!-- Tool Steps -->
+  <div class="mt-4 p-3 border rounded bg-light" id="layers-tool-steps">
+    <h5>Select a tool to see steps.</h5>
+  </div>
+</section>
+<!-- Retouching Toolbar Section -->
+<section class="container my-5" id="retouch-toolbar-section" style="display:none;">
+  <h3 class="text-center mb-4">Photo Retouching Tools</h3>
+  <div class="d-flex flex-wrap justify-content-center gap-2">
+    <button class="btn btn-outline-dark retouch-tool" data-tool="spot-healing">Spot Healing Brush</button>
+    <button class="btn btn-outline-dark retouch-tool" data-tool="healing-brush">Healing Brush</button>
+    <button class="btn btn-outline-dark retouch-tool" data-tool="patch">Patch Tool</button>
+    <button class="btn btn-outline-dark retouch-tool" data-tool="clone-stamp">Clone Stamp Tool</button>
+    <button class="btn btn-outline-dark retouch-tool" data-tool="dodge">Dodge Tool</button>
+    <button class="btn btn-outline-dark retouch-tool" data-tool="burn">Burn Tool</button>
+    <button class="btn btn-outline-dark retouch-tool" data-tool="blur">Blur Tool</button>
+    <button class="btn btn-outline-dark retouch-tool" data-tool="sharpen">Sharpen Tool</button>
+    <button class="btn btn-outline-dark retouch-tool" data-tool="smudge">Smudge Tool</button>
+  </div>
+
+  <!-- Tool Steps -->
+  <div class="mt-4 p-3 border rounded bg-light" id="retouch-tool-steps">
+    <h5>Select a tool to see steps.</h5>
+  </div>
+</section>
 
   <!-- Topic Details -->
   <section class="container my-5" id="topic-details" style="display:none;">
@@ -323,6 +390,273 @@
       loadTopics();
       loadRecommended();
     });
+    // Tool step instructions
+  const toolSteps = {
+    rectangular: [
+      "Select the Rectangular Marquee Tool from the toolbar.",
+      "Click and drag on the canvas to create a rectangular selection.",
+      "Hold Shift to constrain the selection to a square.",
+      "Use the selection for cropping, coloring, or editing.",
+      "For Resize this image Ctrl+T.",
+      "To make many copies(Ctrl+Alt) & move tool use."
+    ],
+    elliptical: [
+      "Select the Elliptical Marquee Tool.",
+      "Click and drag to draw an ellipse selection.",
+      "Hold Shift to make a perfect circle.",
+      "Position the selection and apply edits inside it."
+    ],
+    "single-row": [
+      "Choose the Single Row Marquee Tool.",
+      "Use to create horizontal dotted line in between image.",
+      "To make more copies select row & drag by prening(Ctrl+Alt).",
+      "Useful for creating lines or trimming pixels."
+    ],
+    "single-column": [
+      "Choose the Single Column Marquee Tool.",
+      "Use to create vertical dotted line in between image.",
+      "To make more copies select row & drag by prening(Ctrl+Alt).",
+      "Great for pixel editing and vertical lines."
+    ]
+  };
+
+  // Show steps when a tool is clicked
+  document.querySelectorAll(".tool-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const tool = btn.getAttribute("data-tool");
+      const steps = toolSteps[tool];
+      if (steps) {
+        document.getElementById("tool-steps").innerHTML = `
+          <h5>${btn.textContent} - Steps</h5>
+          <ol>${steps.map(step => `<li>${step}</li>`).join("")}</ol>
+        `;
+      }
+    });
+  });
+
+  // Show toolbar when a topic is clicked
+  function showTopicDetails(topicName) {
+    const details = topicDetails[topicName];
+    if (details) {
+      document.getElementById("topic-title").textContent = topicName;
+      document.getElementById("topic-video").src = details.video;
+      document.getElementById("topic-notes").textContent = details.notes;
+      document.getElementById("topic-assignment-img").src = details.assignmentImg;
+      document.getElementById("topic-assignment-desc").textContent = details.assignmentDesc;
+      document.getElementById("topic-details").style.display = "block";
+      document.getElementById("toolbar-section").style.display = "block"; // show toolbar
+      window.location.hash = "topic-details";
+    }
+  }
   </script>
+  <script>
+  // Retouching tool steps
+  const retouchSteps = {
+    "spot-healing": [
+      "Select the Spot Healing Brush Tool from the toolbar.",
+      "Choose a brush size slightly larger than the imperfection.",
+      "Click once on blemishes or unwanted spots to remove them.",
+      "Photoshop will auto-blend the area."
+    ],
+    "healing-brush": [
+      "Select the Healing Brush Tool.",
+      "Select the image by Alt.",
+      "Can also used to remove dark spot/pimple.",
+      "Hold Alt/Option and click to sample a clean source area.",
+      "Paint over the imperfection to replace it with the sampled pixels.",
+      "Blend until natural."
+    ],
+    "patch": [
+      "Choose the Patch Tool.",
+      "Create a patches of image.",
+      "1st draw patch -> drag on image.",
+      "Drag the selection to a clean area to replace it.",
+      "Select what you want to show in patch. eg:- eyes,lips,head etc. & enter.",
+      "Deselect when satisfied."
+    ],
+    "clone-stamp": [
+      "Select the Clone Stamp Tool.",
+      "Hold Alt/Option and click to set a source point.",
+      "Brush over the target area to copy pixels from the source.",
+      "Adjust opacity for smoother blending."
+    ],
+    "content-aware": [
+      "Make a selection around the object to remove.",
+      "Go to Edit > Fill.",
+      "Choose 'Content-Aware' and click OK.",
+      "Photoshop fills the area automatically."
+    ],
+    "dodge": [
+      "Select the Dodge Tool.",
+      "Choose a soft brush and low exposure (10–20%).",
+      "Paint over areas you want to lighten.",
+      "Work gradually for natural results."
+    ],
+    "burn": [
+      "Select the Burn Tool.",
+      "Choose a soft brush and low exposure.",
+      "Paint over areas you want to darken.",
+      "Build up effect slowly."
+    ],
+    "blur": [
+      "Select the Blur Tool.",
+      "Set strength to a low percentage.",
+      "Brush over areas you want to soften.",
+      "Use for skin smoothing or background blur."
+    ],
+    "sharpen": [
+      "Select the Sharpen Tool.",
+      "Choose a soft brush and low strength.",
+      "Paint over details to enhance clarity.",
+      "Avoid over-sharpening to prevent noise."
+    ],
+    "smudge": [
+      "Select the Smudge Tool.",
+      "Choose a brush and set strength.",
+      "Drag pixels around to blend edges.",
+      "Use sparingly for natural look."
+    ],
+  };
+
+  // Show steps when retouching tool clicked
+  document.querySelectorAll(".retouch-tool").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const tool = btn.getAttribute("data-tool");
+      const steps = retouchSteps[tool];
+      if (steps) {
+        document.getElementById("retouch-tool-steps").innerHTML = `
+          <h5>${btn.textContent} - Steps</h5>
+          <ol>${steps.map(step => `<li>${step}</li>`).join("")}</ol>
+        `;
+      }
+    });
+  });
+
+  // Modify showTopicDetails to also show retouch toolbar
+  function showTopicDetails(topicName) {
+    const details = topicDetails[topicName];
+    if (details) {
+      document.getElementById("topic-title").textContent = topicName;
+      document.getElementById("topic-video").src = details.video;
+      document.getElementById("topic-notes").textContent = details.notes;
+      document.getElementById("topic-assignment-img").src = details.assignmentImg;
+      document.getElementById("topic-assignment-desc").textContent = details.assignmentDesc;
+      document.getElementById("topic-details").style.display = "block";
+
+      // Show retouch toolbar only if topic is "Photo Retouching"
+      if (topicName === "Photo Retouching") {
+        document.getElementById("retouch-toolbar-section").style.display = "block";
+      } else {
+        document.getElementById("retouch-toolbar-section").style.display = "none";
+      }
+
+      window.location.hash = "topic-details";
+    }
+  }
+</script>
+<script>
+  // Steps for each Layers tool
+  const layersSteps = {
+    move: [
+      "Select the Move Tool (V).",
+      "Click and drag to move a layer’s contents.",
+      "Use arrow keys for precise movement.",
+      "Enable Auto-Select for quick layer switching."
+    ],
+    marquee: [
+      "Select Rectangular or Elliptical Marquee Tool.",
+      "Click and drag to create a selection.",
+      "Hold Shift for square/circle selection.",
+      "Use selections to edit or mask areas."
+    ],
+    lasso: [
+      "Choose from Lasso, Polygonal, or Magnetic Lasso Tool.",
+      "Draw freehand, straight-edged, or magnetic selections.",
+      "Close the selection loop to finish.",
+      "Refine edges for clean results."
+    ],
+    "quick-selection": [
+      "Select the Quick Selection Tool.",
+      "Click and drag to paint a selection area.",
+      "Photoshop detects edges automatically.",
+      "Use Add/Subtract options to adjust."
+    ],
+    "magic-wand": [
+      "Select the Magic Wand Tool.",
+      "Click on an area to select similar colors.",
+      "Adjust tolerance for more/less range.",
+      "Useful for backgrounds or solid colors."
+    ],
+    brush: [
+      "Select the Brush Tool.",
+      "Choose size, hardness, and opacity.",
+      "Paint directly on layer or mask.",
+      "Use soft brushes for blending effects."
+    ],
+    eraser: [
+      "Select the Eraser Tool.",
+      "Adjust size and hardness.",
+      "Click and drag to erase pixels.",
+      "Use Background Eraser for transparency."
+    ],
+    gradient: [
+      "Select the Gradient Tool.",
+      "Choose gradient type (linear, radial, etc.).",
+      "Click and drag to apply gradient.",
+      "Useful for backgrounds and overlays."
+    ],
+    "paint-bucket": [
+      "Select the Paint Bucket Tool.",
+      "Click inside a selection or area.",
+      "Fills with current foreground color or pattern.",
+      "Adjust tolerance for better results."
+    ],
+    text: [
+      "Select the Type Tool (T).",
+      "Click to create point text, or drag for text box.",
+      "Adjust font, size, and color in options bar.",
+      "Use layers panel to manage text layers."
+    ],
+    shapes: [
+      "Select Shape Tool (Rectangle, Ellipse, etc.).",
+      "Click and drag to create shape layers.",
+      "Hold Shift to constrain proportions.",
+      "Edit fill, stroke, and styles in properties."
+    ]
+  };
+
+  // Show steps when Layers tool clicked
+  document.querySelectorAll(".layers-tool").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const tool = btn.getAttribute("data-tool");
+      const steps = layersSteps[tool];
+      if (steps) {
+        document.getElementById("layers-tool-steps").innerHTML = `
+          <h5>${btn.textContent} - Steps</h5>
+          <ol>${steps.map(step => `<li>${step}</li>`).join("")}</ol>
+        `;
+      }
+    });
+  });
+
+  // Update showTopicDetails function
+  function showTopicDetails(topicName) {
+    const details = topicDetails[topicName];
+    if (details) {
+      document.getElementById("topic-title").textContent = topicName;
+      document.getElementById("topic-video").src = details.video;
+      document.getElementById("topic-notes").textContent = details.notes;
+      document.getElementById("topic-assignment-img").src = details.assignmentImg;
+      document.getElementById("topic-assignment-desc").textContent = details.assignmentDesc;
+      document.getElementById("topic-details").style.display = "block";
+
+      // Show toolbars based on topic
+      document.getElementById("retouch-toolbar-section").style.display = (topicName === "Photo Retouching") ? "block" : "none";
+      document.getElementById("layers-toolbar-section").style.display = (topicName === "Working with Layers") ? "block" : "none";
+
+      window.location.hash = "topic-details";
+    }
+  }
+</script>
 </body>
 </html>
