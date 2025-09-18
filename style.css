@@ -1,0 +1,30 @@
+ body { font-family: Arial, sans-serif; scroll-behavior: smooth; }
+    .nav-link{
+      color: white;
+    }
+    /* Hero Section */
+    .hero {
+      height: 100px;
+      background-color: bisque;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+    .hero-content { position: relative; z-index: 1; }
+    /* Assignments */
+    .assignment-img { height: 200px; object-fit: cover; }
+    /* Testimonials */
+    .testimonial {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      height: 100%;
+    }
