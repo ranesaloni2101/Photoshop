@@ -4,41 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Photoshop Learning Website</title>
+  <link rel="stylesheet" href="style.css">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; scroll-behavior: smooth; }
-    .nav-link{
-      color: white;
-    }
-    /* Hero Section */
-    .hero {
-      height: 100px;
-      background-color: bisque;
-      color: white;
-      text-align: center;
-      padding: 120px 20px;
-      position: relative;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
-    }
-    .hero-content { position: relative; z-index: 1; }
-    /* Assignments */
-    .assignment-img { height: 200px; object-fit: cover; }
-    /* Testimonials */
-    .testimonial {
-      background: #f8f9fa;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      height: 100%;
-    }
+   
   </style>
 </head>
 <body>
@@ -64,17 +36,8 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero d-flex align-items-center justify-content-center" id="home">
-    <div class="hero-content">
-      <h1 class="display-1 fw-bold">Master Photoshop with Ease</h1>
-      <p class="lead">Learn from basics to advanced with videos, notes & assignments</p>
-    </div>
-  </section>
-
   <!-- Topics Section -->
-  <section class="container my-5" id="topics">
-    <h2 class="mb-4 text-center">Photoshop Topics</h2>
+  <section class="container my-3" id="topics">
 
     <!-- Search & Filter -->
     <div class="row mb-4">
@@ -140,6 +103,33 @@
     <h5>Select a tool to see steps.</h5>
   </div>
 </section>
+
+<!-- Fashion Toolbar Section -->
+<section class="container my-5" id="fashion-toolbar-section" style="display:none;">
+  <h3 class="text-center mb-4">Fashion Retouching Tools</h3>
+  <div class="d-flex flex-wrap justify-content-center gap-2">
+    <button class="btn btn-outline-dark fashion-tool" data-tool="spot-healing">Spot Healing Brush Tool</button>
+    <button class="btn btn-outline-dark fashion-tool" data-tool="healing-brush">Healing Brush Tool</button>
+    <button class="btn btn-outline-dark fashion-tool" data-tool="patch">Patch Tool</button>
+    <button class="btn btn-outline-dark fashion-tool" data-tool="clone-stamp">Clone Stamp Tool</button>
+    <button class="btn btn-outline-dark fashion-tool" data-tool="dodge">Dodge Tool</button>
+    <button class="btn btn-outline-dark fashion-tool" data-tool="burn">Burn Tool</button>
+    <button class="btn btn-outline-dark fashion-tool" data-tool="liquify">Liquify Filter</button>
+    <button class="btn btn-outline-dark fashion-tool" data-tool="blur">Blur Tool</button>
+    <button class="btn btn-outline-dark fashion-tool" data-tool="sharpen">Sharpen Tool</button>
+    <button class="btn btn-outline-dark fashion-tool" data-tool="smudge">Smudge Tool</button>
+    <button class="btn btn-outline-dark fashion-tool" data-tool="content-aware">Content-Aware Fill</button>
+    <button class="btn btn-outline-dark fashion-tool" data-tool="camera-raw">Camera Raw Filter</button>
+    <button class="btn btn-outline-dark fashion-tool" data-tool="adjustment-layers">Adjustment Layers</button>
+    <button class="btn btn-outline-dark fashion-tool" data-tool="masks">Layer Masks & Clipping Masks</button>
+  </div>
+
+  <!-- Tool Steps -->
+  <div class="mt-4 p-3 border rounded bg-light" id="fashion-tool-steps">
+    <h5>Select a tool to see steps.</h5>
+  </div>
+</section>
+
 <!-- Retouching Toolbar Section -->
 <section class="container my-5" id="retouch-toolbar-section" style="display:none;">
   <h3 class="text-center mb-4">Photo Retouching Tools</h3>
@@ -160,6 +150,57 @@
     <h5>Select a tool to see steps.</h5>
   </div>
 </section>
+
+<!-- Electronics Toolbar -->
+<section class="container my-5" id="electronic-toolbar-section" style="display:none;">
+  <h3 class="text-center mb-4">Electronics Editing Tools</h3>
+  <div class="d-flex flex-wrap justify-content-center gap-2">
+    <button class="btn btn-outline-dark electronic-tool" data-tool="pen">Pen Tool</button>
+    <button class="btn btn-outline-dark electronic-tool" data-tool="shape">Rectangle / Shape Tools</button>
+    <button class="btn btn-outline-dark electronic-tool" data-tool="clone">Clone Stamp Tool</button>
+    <button class="btn btn-outline-dark electronic-tool" data-tool="healing">Healing / Spot Healing Brush</button>
+    <button class="btn btn-outline-dark electronic-tool" data-tool="layer-styles">Layer Styles</button>
+    <button class="btn btn-outline-dark electronic-tool" data-tool="adjustment-layers">Adjustment Layers</button>
+  </div>
+  <div class="mt-4 p-3 border rounded bg-light" id="electronics-tool-steps">
+    <h5>Select a tool to see steps.</h5>
+  </div>
+</section>
+
+<!-- Game Toolbar -->
+<section class="container my-5" id="game-toolbar-section" style="display:none;">
+  <h3 class="text-center mb-4">Game Design Tools</h3>
+  <div class="d-flex flex-wrap justify-content-center gap-2">
+    <button class="btn btn-outline-dark game-tool" data-tool="brush">Brush Tool</button>
+    <button class="btn btn-outline-dark game-tool" data-tool="pen-lasso">Pen / Lasso Tool</button>
+    <button class="btn btn-outline-dark game-tool" data-tool="gradient">Gradient Tool</button>
+    <button class="btn btn-outline-dark game-tool" data-tool="smudge-blur-sharpen">Smudge / Blur / Sharpen Tool</button>
+    <button class="btn btn-outline-dark game-tool" data-tool="liquify">Liquify Tool</button>
+    <button class="btn btn-outline-dark game-tool" data-tool="layer-styles">Layer Styles & Blending Modes</button>
+    <button class="btn btn-outline-dark game-tool" data-tool="custom-shapes">Custom Shapes / Paths</button>
+  </div>
+  <div class="mt-4 p-3 border rounded bg-light" id="game-tool-steps">
+    <h5>Select a tool to see steps.</h5>
+  </div>
+</section>
+
+<!-- Music Toolbar -->
+<section class="container my-5" id="music-toolbar-section" style="display:none;">
+  <h3 class="text-center mb-4">Music / Poster Design Tools</h3>
+  <div class="d-flex flex-wrap justify-content-center gap-2">
+    <button class="btn btn-outline-dark music-tool" data-tool="text">Text Tool</button>
+    <button class="btn btn-outline-dark music-tool" data-tool="brush">Brush Tool</button>
+    <button class="btn btn-outline-dark music-tool" data-tool="shape">Shape Tools</button>
+    <button class="btn btn-outline-dark music-tool" data-tool="gradient-map">Gradient / Gradient Map</button>
+    <button class="btn btn-outline-dark music-tool" data-tool="layer-styles">Layer Styles</button>
+    <button class="btn btn-outline-dark music-tool" data-tool="adjustment-layers">Adjustment Layers</button>
+    <button class="btn btn-outline-dark music-tool" data-tool="selection">Selection Tools</button>
+  </div>
+  <div class="mt-4 p-3 border rounded bg-light" id="music-tool-steps">
+    <h5>Select a tool to see steps.</h5>
+  </div>
+</section>
+
 
   <!-- Topic Details -->
   <section class="container my-5" id="topic-details" style="display:none;">
@@ -183,7 +224,7 @@
   </section>
 
   <!-- Recommended Tools -->
-  <section class="container my-5" id="recommended">
+  <section class="container my-3" id="recommended">
     <h2 class="mb-4 text-center">Recommended Tools</h2>
     <div class="row" id="recommended-section"></div>
   </section>
@@ -280,383 +321,8 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Topics data
-    const topics = [
-      { name: "Photoshop Basics", icon: "bi-palette", level: "beginner" },
-      { name: "Working with Layers", icon: "bi-layers", level: "beginner" },
-      { name: "Photo Retouching", icon: "bi-brush", level: "intermediate" },
-      { name: "Fashion", icon: "bi-bag-heart", level: "advanced" },
-      { name: "Electronic", icon: "bi-cpu", level: "intermediate" },
-      { name: "Game", icon: "bi-controller", level: "advanced" },
-      { name: "Music", icon: "bi-music-note-beamed", level: "intermediate" },
-      { name: "Furniture", icon: "bi-house-door", level: "beginner" },
-      { name: "Food", icon: "bi-cup-straw", level: "beginner" },
-      { name: "Other", icon: "bi-three-dots", level: "all" }
-    ];
-
-    // Topic details
-    const topicDetails = {
-      "Photoshop Basics": {
-        video: "https://www.youtube.com/embed/lnzuMJLZRdU",
-        notes: "Introduction to Photoshop interface, tools, and navigation.",
-        assignmentImg: "images/assignment-basic.jpg",
-        assignmentDesc: "Practice using selection tools and basic transformations."
-      },
-      "Working with Layers": {
-        video: "https://www.youtube.com/embed/3K6A9e3bKFY",
-        notes: "Understanding layers, blending modes, and masks.",
-        assignmentImg: "images/assignment-layers.jpg",
-        assignmentDesc: "Create a poster using multiple layers and blending effects."
-      },
-      "Photo Retouching": {
-        video: "https://www.youtube.com/embed/auJ0kqTg-3o",
-        notes: "Techniques for blemish removal, color correction, and skin smoothing.",
-        assignmentImg: "images/assignment-retouch.jpg",
-        assignmentDesc: "Enhance a portrait by fixing skin tone and brightness."
-      }
-    };
-
-    // Recommended Tools
-    const recommendedTools = [
-      { name: "CorelDRAW", image: "coral.jpg", price: "$199" },
-      { name: "Photoshop", image: "photoshop.jpg", price: "$239" },
-      { name: "InDesign", image: "indesign.jpg", price: "$249" }
-    ];
-
-    // Load Topics
-    function loadTopics(filterText = "", filterLevel = "all") {
-      const container = document.getElementById('topics-container');
-      container.innerHTML = "";
-      topics.forEach(topic => {
-        if (
-          topic.name.toLowerCase().includes(filterText.toLowerCase()) &&
-          (filterLevel === "all" || topic.level === filterLevel)
-        ) {
-          const button = document.createElement('button');
-          button.className = "btn btn-outline-primary d-flex align-items-center gap-2";
-          button.innerHTML = `<i class="bi ${topic.icon}"></i> ${topic.name}`;
-          button.addEventListener("click", () => showTopicDetails(topic.name));
-          container.appendChild(button);
-        }
-      });
-    }
-
-    // Show Topic Details
-    function showTopicDetails(topicName) {
-      const details = topicDetails[topicName];
-      if (details) {
-        document.getElementById("topic-title").textContent = topicName;
-        document.getElementById("topic-video").src = details.video;
-        document.getElementById("topic-notes").textContent = details.notes;
-        document.getElementById("topic-assignment-img").src = details.assignmentImg;
-        document.getElementById("topic-assignment-desc").textContent = details.assignmentDesc;
-        document.getElementById("topic-details").style.display = "block";
-        window.location.hash = "topic-details";
-      }
-    }
-
-    // Load Recommended Tools
-    function loadRecommended() {
-      const container = document.getElementById('recommended-section');
-      container.innerHTML = "";
-      recommendedTools.forEach(tool => {
-        const card = document.createElement('div');
-        card.className = 'col-md-4 mb-4';
-        card.innerHTML = `
-          <div class="card h-100 text-center shadow-sm">
-            <img src="${tool.image}" class="card-img-top" alt="${tool.name}">
-            <div class="card-body">
-              <h5 class="card-title">${tool.name}</h5>
-              <p class="card-text text-success fw-bold">${tool.price}</p>
-              <button class="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        `;
-        container.appendChild(card);
-      });
-    }
-
-    // Event Listeners for search + filter
-    document.getElementById('searchInput').addEventListener('input', e => {
-      loadTopics(e.target.value, document.getElementById('levelFilter').value);
-    });
-    document.getElementById('levelFilter').addEventListener('change', e => {
-      loadTopics(document.getElementById('searchInput').value, e.target.value);
-    });
-
-    // Init
-    document.addEventListener('DOMContentLoaded', () => {
-      loadTopics();
-      loadRecommended();
-    });
-    // Tool step instructions
-  const toolSteps = {
-    rectangular: [
-      "Select the Rectangular Marquee Tool from the toolbar.",
-      "Click and drag on the canvas to create a rectangular selection.",
-      "Hold Shift to constrain the selection to a square.",
-      "Use the selection for cropping, coloring, or editing.",
-      "For Resize this image Ctrl+T.",
-      "To make many copies(Ctrl+Alt) & move tool use."
-    ],
-    elliptical: [
-      "Select the Elliptical Marquee Tool.",
-      "Click and drag to draw an ellipse selection.",
-      "Hold Shift to make a perfect circle.",
-      "Position the selection and apply edits inside it."
-    ],
-    "single-row": [
-      "Choose the Single Row Marquee Tool.",
-      "Use to create horizontal dotted line in between image.",
-      "To make more copies select row & drag by prening(Ctrl+Alt).",
-      "Useful for creating lines or trimming pixels."
-    ],
-    "single-column": [
-      "Choose the Single Column Marquee Tool.",
-      "Use to create vertical dotted line in between image.",
-      "To make more copies select row & drag by prening(Ctrl+Alt).",
-      "Great for pixel editing and vertical lines."
-    ]
-  };
-
-  // Show steps when a tool is clicked
-  document.querySelectorAll(".tool-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const tool = btn.getAttribute("data-tool");
-      const steps = toolSteps[tool];
-      if (steps) {
-        document.getElementById("tool-steps").innerHTML = `
-          <h5>${btn.textContent} - Steps</h5>
-          <ol>${steps.map(step => `<li>${step}</li>`).join("")}</ol>
-        `;
-      }
-    });
-  });
-
-  // Show toolbar when a topic is clicked
-  function showTopicDetails(topicName) {
-    const details = topicDetails[topicName];
-    if (details) {
-      document.getElementById("topic-title").textContent = topicName;
-      document.getElementById("topic-video").src = details.video;
-      document.getElementById("topic-notes").textContent = details.notes;
-      document.getElementById("topic-assignment-img").src = details.assignmentImg;
-      document.getElementById("topic-assignment-desc").textContent = details.assignmentDesc;
-      document.getElementById("topic-details").style.display = "block";
-      document.getElementById("toolbar-section").style.display = "block"; // show toolbar
-      window.location.hash = "topic-details";
-    }
-  }
-  </script>
-  <script>
-  // Retouching tool steps
-  const retouchSteps = {
-    "spot-healing": [
-      "Select the Spot Healing Brush Tool from the toolbar.",
-      "Choose a brush size slightly larger than the imperfection.",
-      "Click once on blemishes or unwanted spots to remove them.",
-      "Photoshop will auto-blend the area."
-    ],
-    "healing-brush": [
-      "Select the Healing Brush Tool.",
-      "Select the image by Alt.",
-      "Can also used to remove dark spot/pimple.",
-      "Hold Alt/Option and click to sample a clean source area.",
-      "Paint over the imperfection to replace it with the sampled pixels.",
-      "Blend until natural."
-    ],
-    "patch": [
-      "Choose the Patch Tool.",
-      "Create a patches of image.",
-      "1st draw patch -> drag on image.",
-      "Drag the selection to a clean area to replace it.",
-      "Select what you want to show in patch. eg:- eyes,lips,head etc. & enter.",
-      "Deselect when satisfied."
-    ],
-    "clone-stamp": [
-      "Select the Clone Stamp Tool.",
-      "Hold Alt/Option and click to set a source point.",
-      "Brush over the target area to copy pixels from the source.",
-      "Adjust opacity for smoother blending."
-    ],
-    "content-aware": [
-      "Make a selection around the object to remove.",
-      "Go to Edit > Fill.",
-      "Choose 'Content-Aware' and click OK.",
-      "Photoshop fills the area automatically."
-    ],
-    "dodge": [
-      "Select the Dodge Tool.",
-      "Choose a soft brush and low exposure (10–20%).",
-      "Paint over areas you want to lighten.",
-      "Work gradually for natural results."
-    ],
-    "burn": [
-      "Select the Burn Tool.",
-      "Choose a soft brush and low exposure.",
-      "Paint over areas you want to darken.",
-      "Build up effect slowly."
-    ],
-    "blur": [
-      "Select the Blur Tool.",
-      "Set strength to a low percentage.",
-      "Brush over areas you want to soften.",
-      "Use for skin smoothing or background blur."
-    ],
-    "sharpen": [
-      "Select the Sharpen Tool.",
-      "Choose a soft brush and low strength.",
-      "Paint over details to enhance clarity.",
-      "Avoid over-sharpening to prevent noise."
-    ],
-    "smudge": [
-      "Select the Smudge Tool.",
-      "Choose a brush and set strength.",
-      "Drag pixels around to blend edges.",
-      "Use sparingly for natural look."
-    ],
-  };
-
-  // Show steps when retouching tool clicked
-  document.querySelectorAll(".retouch-tool").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const tool = btn.getAttribute("data-tool");
-      const steps = retouchSteps[tool];
-      if (steps) {
-        document.getElementById("retouch-tool-steps").innerHTML = `
-          <h5>${btn.textContent} - Steps</h5>
-          <ol>${steps.map(step => `<li>${step}</li>`).join("")}</ol>
-        `;
-      }
-    });
-  });
-
-  // Modify showTopicDetails to also show retouch toolbar
-  function showTopicDetails(topicName) {
-    const details = topicDetails[topicName];
-    if (details) {
-      document.getElementById("topic-title").textContent = topicName;
-      document.getElementById("topic-video").src = details.video;
-      document.getElementById("topic-notes").textContent = details.notes;
-      document.getElementById("topic-assignment-img").src = details.assignmentImg;
-      document.getElementById("topic-assignment-desc").textContent = details.assignmentDesc;
-      document.getElementById("topic-details").style.display = "block";
-
-      // Show retouch toolbar only if topic is "Photo Retouching"
-      if (topicName === "Photo Retouching") {
-        document.getElementById("retouch-toolbar-section").style.display = "block";
-      } else {
-        document.getElementById("retouch-toolbar-section").style.display = "none";
-      }
-
-      window.location.hash = "topic-details";
-    }
-  }
-</script>
-<script>
-  // Steps for each Layers tool
-  const layersSteps = {
-    move: [
-      "Select the Move Tool (V).",
-      "Click and drag to move a layer’s contents.",
-      "Use arrow keys for precise movement.",
-      "Enable Auto-Select for quick layer switching."
-    ],
-    marquee: [
-      "Select Rectangular or Elliptical Marquee Tool.",
-      "Click and drag to create a selection.",
-      "Hold Shift for square/circle selection.",
-      "Use selections to edit or mask areas."
-    ],
-    lasso: [
-      "Choose from Lasso, Polygonal, or Magnetic Lasso Tool.",
-      "Draw freehand, straight-edged, or magnetic selections.",
-      "Close the selection loop to finish.",
-      "Refine edges for clean results."
-    ],
-    "quick-selection": [
-      "Select the Quick Selection Tool.",
-      "Click and drag to paint a selection area.",
-      "Photoshop detects edges automatically.",
-      "Use Add/Subtract options to adjust."
-    ],
-    "magic-wand": [
-      "Select the Magic Wand Tool.",
-      "Click on an area to select similar colors.",
-      "Adjust tolerance for more/less range.",
-      "Useful for backgrounds or solid colors."
-    ],
-    brush: [
-      "Select the Brush Tool.",
-      "Choose size, hardness, and opacity.",
-      "Paint directly on layer or mask.",
-      "Use soft brushes for blending effects."
-    ],
-    eraser: [
-      "Select the Eraser Tool.",
-      "Adjust size and hardness.",
-      "Click and drag to erase pixels.",
-      "Use Background Eraser for transparency."
-    ],
-    gradient: [
-      "Select the Gradient Tool.",
-      "Choose gradient type (linear, radial, etc.).",
-      "Click and drag to apply gradient.",
-      "Useful for backgrounds and overlays."
-    ],
-    "paint-bucket": [
-      "Select the Paint Bucket Tool.",
-      "Click inside a selection or area.",
-      "Fills with current foreground color or pattern.",
-      "Adjust tolerance for better results."
-    ],
-    text: [
-      "Select the Type Tool (T).",
-      "Click to create point text, or drag for text box.",
-      "Adjust font, size, and color in options bar.",
-      "Use layers panel to manage text layers."
-    ],
-    shapes: [
-      "Select Shape Tool (Rectangle, Ellipse, etc.).",
-      "Click and drag to create shape layers.",
-      "Hold Shift to constrain proportions.",
-      "Edit fill, stroke, and styles in properties."
-    ]
-  };
-
-  // Show steps when Layers tool clicked
-  document.querySelectorAll(".layers-tool").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const tool = btn.getAttribute("data-tool");
-      const steps = layersSteps[tool];
-      if (steps) {
-        document.getElementById("layers-tool-steps").innerHTML = `
-          <h5>${btn.textContent} - Steps</h5>
-          <ol>${steps.map(step => `<li>${step}</li>`).join("")}</ol>
-        `;
-      }
-    });
-  });
-
-  // Update showTopicDetails function
-  function showTopicDetails(topicName) {
-    const details = topicDetails[topicName];
-    if (details) {
-      document.getElementById("topic-title").textContent = topicName;
-      document.getElementById("topic-video").src = details.video;
-      document.getElementById("topic-notes").textContent = details.notes;
-      document.getElementById("topic-assignment-img").src = details.assignmentImg;
-      document.getElementById("topic-assignment-desc").textContent = details.assignmentDesc;
-      document.getElementById("topic-details").style.display = "block";
-
-      // Show toolbars based on topic
-      document.getElementById("retouch-toolbar-section").style.display = (topicName === "Photo Retouching") ? "block" : "none";
-      document.getElementById("layers-toolbar-section").style.display = (topicName === "Working with Layers") ? "block" : "none";
-
-      window.location.hash = "topic-details";
-    }
-  }
+  <script src="script.js">
+    
 </script>
 </body>
 </html>
