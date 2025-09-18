@@ -440,7 +440,7 @@ const musicSteps = {
 document.querySelectorAll(".electronic-tool").forEach(btn => {
   btn.addEventListener("click", () => {
     const tool = btn.getAttribute("data-tool");
-    const steps = electronicsSteps[tool];
+    const steps = electronicSteps[tool];
     if (steps) {
       document.getElementById("electronic-tool-steps").innerHTML = `
         <h5>${btn.textContent} - Steps</h5>
@@ -500,4 +500,5 @@ document.querySelectorAll(".music-tool").forEach(btn => {
 
       window.location.hash = "topic-details";
     }
+
   }
