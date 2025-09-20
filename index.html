@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Photoshop Learning Website</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
@@ -41,10 +42,7 @@
 
     <!-- Search & Filter -->
     <div class="row mb-4">
-      <div class="col-md-8 mb-2">
-        <input type="text" id="searchInput" class="form-control" placeholder="Search topics...">
-      </div>
-      <div class="col-md-4">
+      <div class="col-md-12">
         <select id="levelFilter" class="form-select">
           <option value="all">All Levels</option>
           <option value="beginner">Beginner</option>
@@ -53,34 +51,56 @@
         </select>
       </div>
     </div>
+<div class="main-container">
+  <!-- Sidebar -->
+  <div class="photoshop-topics">
+  <h3>LEARN PHOTOSHOP</h3>
+  <input type="text" id="search" placeholder="Search" />
+
+  <ul id="topicsList">
+    <li onclick="showTopicDetails('Photoshop Basics')"><i class="fa-solid fa-paintbrush"></i>Tool Bar</li>
+    <li onclick="showTopicDetails('Working with Layers')"><i class="fa-solid fa-layer-group"></i>Add image on empty cup/mobile cover</li>
+    <li onclick="showTopicDetails('Photo Retouching')">Pamplet print on black box</li>
+    <li onclick="showTopicDetails('Fashion')">Dropping Effect</li>
+    <li onclick="showTopicDetails('Electronic')">Eyes open-close</li>
+    <li onclick="showTopicDetails('Game')">Lens Effect</li>
+    <li onclick="showTopicDetails('Music')">Fire Effect</li>
+    <li onclick="showTopicDetails('Furniture')">Golden Effect</li>
+    <li onclick="showTopicDetails('Food')">Image on text</li>
+    <li onclick="showTopicDetails('Other')">Rain Effect</li>
+  </ul>
+</div>
+
+  <!-- Right Side -->
+  <div id="topic-details">
+    <h2>👋 Welcome to Photoshop Learning</h2>
+    <p>Select a topic from the left sidebar to get started.  
+       Here you’ll find tools, guides, and step-by-step tutorials for Photoshop.</p>
+  </div>
+</div>
 
     <!-- Topic Buttons -->
     <div id="topics-container" class="d-flex flex-wrap justify-content-center gap-2"></div>
   </section>
 
-  <!-- Photoshop Toolbar Section -->
-<section class="container my-5" id="toolbar-section" style="display:none;">
-  <h3 class="text-center mb-4">Photoshop Tools</h3>
-  <div class="d-flex flex-wrap justify-content-center gap-3">
-    <button class="btn btn-outline-dark tool-btn" data-tool="rectangular">
-      ▭ Rectangular Marquee
-    </button>
-    <button class="btn btn-outline-dark tool-btn" data-tool="elliptical">
-      ◯ Elliptical Marquee
-    </button>
-    <button class="btn btn-outline-dark tool-btn" data-tool="single-row">
-      ─ Single Row
-    </button>
-    <button class="btn btn-outline-dark tool-btn" data-tool="single-column">
-      │ Single Column
-    </button>
+  <!-- Photoshop Basics Toolbar -->
+<section class="container my-5" id="basics-toolbar-section" style="display:none;">
+  <h3 class="text-center mb-4">Tool Bar</h3>
+  <div class="d-flex flex-wrap justify-content-center gap-2">
+    <button class="btn btn-outline-primary basics-tool" data-tool="rectangular">Rectangular Marquee</button>
+    <button class="btn btn-outline-primary basics-tool" data-tool="elliptical">Elliptical Marquee</button>
+    <button class="btn btn-outline-primary basics-tool" data-tool="single-row">Single Row Marquee</button>
+    <button class="btn btn-outline-primary basics-tool" data-tool="single-column">Single Column Marquee</button>
+    <button class="btn btn-outline-primary basics-tool" data-tool="quick-selection">Quick Selection Tool</button>
+    <button class="btn btn-outline-primary basics-tool" data-tool="magic-wand">Magic Wand Tool</button>
+    <button class="btn btn-outline-primary basics-tool" data-tool="gradient">Gradient Tool</button>
+    <button class="btn btn-outline-primary basics-tool" data-tool="paint-bucket">Paint Bucket Tool</button>
   </div>
-
-  <!-- Tool Steps -->
-  <div class="mt-4 p-3 border rounded bg-light" id="tool-steps">
+  <div class="mt-4 p-3 border rounded bg-light" id="basics-tool-steps">
     <h5>Select a tool to see steps.</h5>
   </div>
 </section>
+
 <!-- Layers Toolbar Section -->
 <section class="container my-5" id="layers-toolbar-section" style="display:none;">
   <h3 class="text-center mb-4">Working with Layers Tools</h3>
@@ -92,8 +112,7 @@
     <button class="btn btn-outline-dark layers-tool" data-tool="magic-wand">Magic Wand Tool</button>
     <button class="btn btn-outline-dark layers-tool" data-tool="brush">Brush Tool</button>
     <button class="btn btn-outline-dark layers-tool" data-tool="eraser">Eraser Tool</button>
-    <button class="btn btn-outline-dark layers-tool" data-tool="gradient">Gradient Tool</button>
-    <button class="btn btn-outline-dark layers-tool" data-tool="paint-bucket">Paint Bucket Tool</button>
+    
     <button class="btn btn-outline-dark layers-tool" data-tool="text">Text Tool</button>
     <button class="btn btn-outline-dark layers-tool" data-tool="shapes">Shape Tools</button>
   </div>
@@ -326,4 +345,3 @@
 </script>
 </body>
 </html>
-
