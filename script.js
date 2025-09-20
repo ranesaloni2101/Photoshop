@@ -1,32 +1,106 @@
 // Topics data
-    const topics = [
-      { name: "Photoshop Basics", icon: "bi-palette", level: "beginner" },
-      { name: "Working with Layers", icon: "bi-layers", level: "beginner" },
-      { name: "Photo Retouching", icon: "bi-brush", level: "intermediate" },
-      { name: "Fashion", icon: "bi-bag-heart", level: "advanced" },
-      { name: "Electronic", icon: "bi-cpu", level: "intermediate" },
-      { name: "Game", icon: "bi-controller", level: "advanced" },
-      { name: "Music", icon: "bi-music-note-beamed", level: "intermediate" },
-      { name: "Furniture", icon: "bi-house-door", level: "beginner" },
-      { name: "Food", icon: "bi-cup-straw", level: "beginner" },
-      { name: "Other", icon: "bi-three-dots", level: "all" }
-    ];
+    // const topics = [
+    //   { name: "Photoshop Basics", icon: "bi-palette", level: "beginner" },
+    //   { name: "Working with Layers", icon: "bi-layers", level: "beginner" },
+    //   { name: "Photo Retouching", icon: "bi-brush", level: "intermediate" },
+    //   { name: "Fashion", icon: "bi-bag-heart", level: "advanced" },
+    //   { name: "Electronic", icon: "bi-cpu", level: "intermediate" },
+    //   { name: "Game", icon: "bi-controller", level: "advanced" },
+    //   { name: "Music", icon: "bi-music-note-beamed", level: "intermediate" },
+    //   { name: "Furniture", icon: "bi-house-door", level: "beginner" },
+    //   { name: "Food", icon: "bi-cup-straw", level: "beginner" },
+    //   { name: "Other", icon: "bi-three-dots", level: "all" }
+    // ];
 
-    // Topic details
-    const topicDetails = {
-      "Photoshop Basics": {
-        video: "https://www.youtube.com/embed/lnzuMJLZRdU",
-        notes: "Introduction to Photoshop interface, tools, and navigation.",
-        assignmentImg: "images/assignment-basic.jpg",
-        assignmentDesc: "Practice using selection tools and basic transformations."
-      },
-      "Working with Layers": {
-        video: "https://www.youtube.com/embed/3K6A9e3bKFY",
-        notes: "Understanding layers, blending modes, and masks.",
-        assignmentImg: "images/assignment-layers.jpg",
-        assignmentDesc: "Create a poster using multiple layers and blending effects."
-      },
-      "Photo Retouching": {
+     // Search filter for topics
+  document.getElementById("search").addEventListener("input", function () {
+    let filter = this.value.toLowerCase();
+    let listItems = document.querySelectorAll("#topicsList li");
+
+    listItems.forEach(li => {
+      let text = li.textContent.toLowerCase();
+      li.style.display = text.includes(filter) ? "block" : "none";
+    });
+  });
+
+  // Photoshop Basics tool steps
+const basicsSteps = {
+  rectangular: [
+    "Select the Rectangular Marquee Tool from the toolbar (M).",
+    "Click and drag on the canvas to draw a rectangular selection.",
+    "Use Shift while dragging to create a perfect square.",
+    "Go to Edit > Fill or apply adjustments only inside the selection."
+  ],
+  elliptical: [
+    "Select the Elliptical Marquee Tool from the toolbar (M).",
+    "Click and drag to create an elliptical selection.",
+    "Hold Shift while dragging for a perfect circle.",
+    "Position it over the area you want to edit, then apply changes."
+  ],
+  singlerow: [
+    "Select the Single Row Marquee Tool.",
+    "Click anywhere on the canvas to select a 1-pixel-high row across the image.",
+    "Useful for filling, patterns, or removing horizontal lines."
+  ],
+  "single-column": [
+    "Select the Single Column Marquee Tool.",
+    "Click anywhere on the canvas to select a 1-pixel-wide column.",
+    "Great for fixing vertical lines or creating stripes."
+  ],
+  "quick-selection": [
+      "Select the Quick Selection Tool.",
+      "Click and drag to paint a selection area.",
+      "Photoshop detects edges automatically.",
+      "Use Add/Subtract options to adjust."
+    ],
+  "magic-wand": [
+      "Select the Magic Wand Tool.",
+      "Click on an area to select similar colors.",
+      "Adjust tolerance for more/less range.",
+      "Useful for backgrounds or solid colors."
+    ],
+   gradient: [
+      "Select the Gradient Tool.",
+      "Choose gradient type (linear, radial, etc.).",
+      "Click and drag to apply gradient.",
+      "Useful for backgrounds and overlays."
+    ],
+  "paint-bucket": [
+      "Select the Paint Bucket Tool.",
+      "Click inside a selection or area.",
+      "Fills with current foreground color or pattern.",
+      "Adjust tolerance for better results."
+    ], 
+};
+// Photoshop Basics tools
+document.querySelectorAll(".basics-tool").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const tool = btn.getAttribute("data-tool");
+    const steps = basicsSteps[tool];
+    if (steps) {
+      document.getElementById("basics-tool-steps").innerHTML = `
+        <h5>${btn.textContent} - Steps</h5>
+        <ol>${steps.map(s => `<li>${s}</li>`).join("")}</ol>
+      `;
+    }
+  });
+});
+
+  // Topic details data
+  const topicDetails = {
+    "Photoshop Basics": {
+      video: "https://www.youtube.com/embed/lnzuMJLZRdU",
+      notes: "Introduction to Photoshop interface, tools, and navigation.",
+      assignmentImg: "images/assignment-basic.jpg",
+      assignmentDesc: "Practice using selection tools and basic transformations."
+    },
+    "Working with Layers": {
+      video: "https://www.youtube.com/embed/3K6A9e3bKFY",
+      notes: "Understanding layers, blending modes, and masks.",
+      assignmentImg: "images/assignment-layers.jpg",
+      assignmentDesc: "Create a poster using multiple layers and blending effects."
+    },
+    "Photo Retouching": {
         video: "https://www.youtube.com/embed/auJ0kqTg-3o",
         notes: "Techniques for blemish removal, color correction, and skin smoothing.",
         assignmentImg: "images/assignment-retouch.jpg",
@@ -56,8 +130,32 @@
   assignmentImg: "images/assignment-music.jpg",
   assignmentDesc: "Design an album poster using text, brushes, shapes, gradients, and adjustment layers."
 }
+    // ... keep other topics here ...
+  };
 
-    };
+  // Show Topic Details
+  function showTopicDetails(topicName) {
+    const details = topicDetails[topicName];
+    if (details) {
+      document.getElementById("topic-title").textContent = topicName;
+      document.getElementById("topic-video").src = details.video;
+      document.getElementById("topic-notes").textContent = details.notes;
+      document.getElementById("topic-assignment-img").src = details.assignmentImg;
+      document.getElementById("topic-assignment-desc").textContent = details.assignmentDesc;
+      document.getElementById("topic-details").style.display = "block";
+
+      // Toolbars per topic
+      document.getElementById("basic-toolbar-section").style.display = (topicName === "Photoshop Basic") ? "block" : "none";
+      document.getElementById("retouch-toolbar-section").style.display = (topicName === "Photo Retouching") ? "block" : "none";
+      document.getElementById("layers-toolbar-section").style.display = (topicName === "Working with Layers") ? "block" : "none";
+      document.getElementById("fashion-toolbar-section").style.display = (topicName === "Fashion") ? "block" : "none";
+      document.getElementById("electronic-toolbar-section").style.display = (topicName === "Electronic") ? "block" : "none";
+      document.getElementById("game-toolbar-section").style.display = (topicName === "Game") ? "block" : "none";
+      document.getElementById("music-toolbar-section").style.display = (topicName === "Music") ? "block" : "none";
+
+      window.location.hash = "topic-details";
+    }
+  }
 
     // Recommended Tools
     const recommendedTools = [
@@ -66,23 +164,7 @@
       { name: "InDesign", image: "indesign.jpg", price: "$249" }
     ];
 
-    // Load Topics
-    function loadTopics(filterText = "", filterLevel = "all") {
-      const container = document.getElementById('topics-container');
-      container.innerHTML = "";
-      topics.forEach(topic => {
-        if (
-          topic.name.toLowerCase().includes(filterText.toLowerCase()) &&
-          (filterLevel === "all" || topic.level === filterLevel)
-        ) {
-          const button = document.createElement('button');
-          button.className = "btn btn-outline-primary d-flex align-items-center gap-2";
-          button.innerHTML = `<i class="bi ${topic.icon}"></i> ${topic.name}`;
-          button.addEventListener("click", () => showTopicDetails(topic.name));
-          container.appendChild(button);
-        }
-      });
-    }
+
 
     // Show Topic Details
     function showTopicDetails(topicName) {
@@ -119,19 +201,6 @@
       });
     }
 
-    // Event Listeners for search + filter
-    document.getElementById('searchInput').addEventListener('input', e => {
-      loadTopics(e.target.value, document.getElementById('levelFilter').value);
-    });
-    document.getElementById('levelFilter').addEventListener('change', e => {
-      loadTopics(document.getElementById('searchInput').value, e.target.value);
-    });
-
-    // Init
-    document.addEventListener('DOMContentLoaded', () => {
-      loadTopics();
-      loadRecommended();
-    });
     
   // Show steps when a tool is clicked
   document.querySelectorAll(".tool-btn").forEach(btn => {
@@ -249,18 +318,6 @@
       "Close the selection loop to finish.",
       "Refine edges for clean results."
     ],
-    "quick-selection": [
-      "Select the Quick Selection Tool.",
-      "Click and drag to paint a selection area.",
-      "Photoshop detects edges automatically.",
-      "Use Add/Subtract options to adjust."
-    ],
-    "magic-wand": [
-      "Select the Magic Wand Tool.",
-      "Click on an area to select similar colors.",
-      "Adjust tolerance for more/less range.",
-      "Useful for backgrounds or solid colors."
-    ],
     brush: [
       "Select the Brush Tool.",
       "Choose size, hardness, and opacity.",
@@ -272,18 +329,6 @@
       "Adjust size and hardness.",
       "Click and drag to erase pixels.",
       "Use Background Eraser for transparency."
-    ],
-    gradient: [
-      "Select the Gradient Tool.",
-      "Choose gradient type (linear, radial, etc.).",
-      "Click and drag to apply gradient.",
-      "Useful for backgrounds and overlays."
-    ],
-    "paint-bucket": [
-      "Select the Paint Bucket Tool.",
-      "Click inside a selection or area.",
-      "Fills with current foreground color or pattern.",
-      "Adjust tolerance for better results."
     ],
     text: [
       "Select the Type Tool (T).",
@@ -490,6 +535,7 @@ document.querySelectorAll(".music-tool").forEach(btn => {
       document.getElementById("topic-details").style.display = "block";
 
       // Show toolbars based on topic
+      document.getElementById("basics-toolbar-section").style.display = (topicName === "Photoshop Basics") ? "block" : "none";
       document.getElementById("retouch-toolbar-section").style.display = (topicName === "Photo Retouching") ? "block" : "none";
       document.getElementById("layers-toolbar-section").style.display = (topicName === "Working with Layers") ? "block" : "none";
       document.getElementById("fashion-toolbar-section").style.display = (topicName === "Fashion") ? "block" : "none";
@@ -500,5 +546,4 @@ document.querySelectorAll(".music-tool").forEach(btn => {
 
       window.location.hash = "topic-details";
     }
-
   }
