@@ -137,3 +137,34 @@
     max-width: 100%;
   }
 }
+@media (min-width: 769px) {
+  .toolbar-section {
+    display: none; /* hidden until selected */
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    padding: 0;
+  }
+  .toolbar-section.active {
+    display: block; /* only the active one shows */
+  }
+}
+.btn {
+  display: inline-block;
+  margin: 6px;
+  padding: 10px 15px;
+  border-radius: 30px;        /* pill shape */
+  border: none;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+}
