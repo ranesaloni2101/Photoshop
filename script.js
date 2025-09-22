@@ -71,6 +71,86 @@ const basicsSteps = {
       "Fills with current foreground color or pattern.",
       "Adjust tolerance for better results."
     ], 
+  blur: [
+    "Select the Blur Tool.",
+    "Set strength to a low percentage.",
+    "Brush over areas you want to soften."
+  ],
+  sharpen: [
+    "Select the Sharpen Tool.",
+    "Choose a soft brush and low strength.",
+    "Paint over details to enhance clarity."
+  ],
+  smudge: [
+    "Select the Smudge Tool.",
+    "Drag pixels around to blend edges.",
+    "Use sparingly for natural look."
+  ],
+  "spot-healing": [
+      "Select the Spot Healing Brush Tool from the toolbar.",
+      "Choose a brush size slightly larger than the imperfection.",
+      "Click once on blemishes or unwanted spots to remove them.",
+      "Photoshop will auto-blend the area."
+    ],
+    "healing-brush": [
+      "Select the Healing Brush Tool.",
+      "Select the image by Alt.",
+      "Can also used to remove dark spot/pimple.",
+      "Hold Alt/Option and click to sample a clean source area.",
+      "Paint over the imperfection to replace it with the sampled pixels.",
+      "Blend until natural."
+    ],
+    "patch": [
+      "Choose the Patch Tool.",
+      "Create a patches of image.",
+      "1st draw patch -> drag on image.",
+      "Drag the selection to a clean area to replace it.",
+      "Select what you want to show in patch. eg:- eyes,lips,head etc. & enter.",
+      "Deselect when satisfied."
+    ],
+    "clone-stamp": [
+      "Select the Clone Stamp Tool.",
+      "Hold Alt/Option and click to set a source point.",
+      "Brush over the target area to copy pixels from the source.",
+      "Adjust opacity for smoother blending."
+    ],
+    "content-aware": [
+      "Make a selection around the object to remove.",
+      "Go to Edit > Fill.",
+      "Choose 'Content-Aware' and click OK.",
+      "Photoshop fills the area automatically."
+    ],
+    "dodge": [
+      "Select the Dodge Tool.",
+      "Choose a soft brush and low exposure (10–20%).",
+      "Paint over areas you want to lighten.",
+      "Work gradually for natural results."
+    ],
+    "burn": [
+      "Select the Burn Tool.",
+      "Choose a soft brush and low exposure.",
+      "Paint over areas you want to darken.",
+      "Build up effect slowly."
+    ],
+    eraser: [
+      "Select the Eraser Tool.",
+      "Adjust size and hardness.",
+      "Click and drag to erase pixels.",
+      "Use Background Eraser for transparency."
+    ],
+    text: [
+      "Select the Type Tool (T).",
+      "Click to create point text, or drag for text box.",
+      "Adjust font, size, and color in options bar.",
+      "Use layers panel to manage text layers."
+    ],
+    shapes: [
+      "Select Shape Tool (Rectangle, Ellipse, etc.).",
+      "Click and drag to create shape layers.",
+      "Hold Shift to constrain proportions.",
+      "Edit fill, stroke, and styles in properties."
+    ],pen: ["Use Pen Tool to create precise paths around gadgets.", "Adjust curves and anchor points.", "Convert path to selection if needed."],
+  shape: ["Use Rectangle/Shape Tools to create UI or board elements.", "Adjust fill, stroke, and styles."]
 };
 // Photoshop Basics tools
 document.querySelectorAll(".basics-tool").forEach(btn => {
@@ -398,21 +478,6 @@ const fashionSteps = {
     "Use Forward Warp Tool to reshape features.",
     "Adjust brush size and pressure as needed.",
     "Click OK to apply."
-  ],
-  blur: [
-    "Select the Blur Tool.",
-    "Set strength to a low percentage.",
-    "Brush over areas you want to soften."
-  ],
-  sharpen: [
-    "Select the Sharpen Tool.",
-    "Choose a soft brush and low strength.",
-    "Paint over details to enhance clarity."
-  ],
-  smudge: [
-    "Select the Smudge Tool.",
-    "Drag pixels around to blend edges.",
-    "Use sparingly for natural look."
   ],
   "content-aware": [
     "Make a selection around the object to remove.",
