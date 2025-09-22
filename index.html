@@ -69,25 +69,17 @@
     <li onclick="showTopicDetails('Food')">Image on text</li>
     <li onclick="showTopicDetails('Other')">Rain Effect</li>
   </ul>
-</div>
+  </div>
 
   <!-- Right Side -->
   <div id="topic-details">
     <h2>👋 Welcome to Photoshop Learning</h2>
     <p>Select a topic from the left sidebar to get started.  
        Here you’ll find tools, guides, and step-by-step tutorials for Photoshop.</p>
-  </div>
-</div>
-
-    <!-- Topic Buttons -->
-    <div id="topics-container" class="d-flex flex-wrap justify-content-center gap-2"></div>
-  </section>
-
-  <!-- Photoshop Basics Toolbar -->
-<section class="container my-5" id="basics-toolbar-section" style="display:none;">
-  <h3 class="text-center mb-4">Tool Bar</h3>
-  <div class="d-flex flex-wrap justify-content-center gap-2">
-    <button class="btn btn-outline-primary basics-tool" data-tool="rectangular">Rectangular Marquee</button>
+       <!-- Photoshop Basics Toolbar -->
+    <div id="basics-toolbar-section" class="toolbar-section" style="display:none;">
+      <h3>Tool Bar</h3>
+        <button class="btn btn-outline-primary basics-tool" data-tool="rectangular">Rectangular Marquee</button>
     <button class="btn btn-outline-primary basics-tool" data-tool="elliptical">Elliptical Marquee</button>
     <button class="btn btn-outline-primary basics-tool" data-tool="single-row">Single Row Marquee</button>
     <button class="btn btn-outline-primary basics-tool" data-tool="single-column">Single Column Marquee</button>
@@ -95,33 +87,59 @@
     <button class="btn btn-outline-primary basics-tool" data-tool="magic-wand">Magic Wand Tool</button>
     <button class="btn btn-outline-primary basics-tool" data-tool="gradient">Gradient Tool</button>
     <button class="btn btn-outline-primary basics-tool" data-tool="paint-bucket">Paint Bucket Tool</button>
-  </div>
-  <div class="mt-4 p-3 border rounded bg-light" id="basics-tool-steps">
-    <h5>Select a tool to see steps.</h5>
-  </div>
-</section>
-
+    <button class="btn btn-outline-primary basics-tool" data-tool="blur">Blur Tool</button>
+    <button class="btn btn-outline-primary basics-tool" data-tool="sharpen">Sharpen Tool</button>
+    <button class="btn btn-outline-primary basics-tool" data-tool="smudge">Smudge Tool</button>
+    <button class="btn btn-outline-primary basics-tool" data-tool="spot-healing">Spot Healing Brush Tool</button>
+    <button class="btn btn-outline-primary basics-tool" data-tool="healing-brush">Healing Brush Tool</button>
+    <button class="btn btn-outline-primary basics-tool" data-tool="patch">Patch Tool</button>
+    <button class="btn btn-outline-primary basics-tool" data-tool="clone-stamp">Clone Stamp Tool</button>
+    <button class="btn btn-outline-primary basics-tool" data-tool="dodge">Dodge Tool</button>
+    <button class="btn btn-outline-primary basics-tool" data-tool="burn">Burn Tool</button>
+    <button class="btn btn-outline-primary basics-tool" data-tool="eraser">Eraser Tool</button>
+    <button class="btn btn-outline-primary basics-tool" data-tool="text">Text Tool</button>
+    <button class="btn btn-outline-primary basics-tool" data-tool="pen">Pen Tool</button>
+    <button class="btn btn-outline-primary basics-tool" data-tool="shape">Rectangle / Shape Tools</button>
+      <div class="mt-3 p-3 border rounded bg-light" id="basics-tool-steps">
+      <h6>Select a tool to see steps.</h6>
+      </div>
+    </div> 
 <!-- Layers Toolbar Section -->
-<section class="container my-5" id="layers-toolbar-section" style="display:none;">
-  <h3 class="text-center mb-4">Working with Layers Tools</h3>
-  <div class="d-flex flex-wrap justify-content-center gap-2">
-    <button class="btn btn-outline-dark layers-tool" data-tool="move">Move Tool</button>
+<div id="layers-toolbar-section" class="toolbar-section" style="display:none;">
+          <h3>Add image on empty cup/mobile cover</h3>
+          <button class="btn btn-outline-dark layers-tool" data-tool="move">Move Tool</button>
     <button class="btn btn-outline-dark layers-tool" data-tool="marquee">Marquee Tools</button>
     <button class="btn btn-outline-dark layers-tool" data-tool="lasso">Lasso Tools</button>
-    <button class="btn btn-outline-dark layers-tool" data-tool="quick-selection">Quick Selection Tool</button>
-    <button class="btn btn-outline-dark layers-tool" data-tool="magic-wand">Magic Wand Tool</button>
     <button class="btn btn-outline-dark layers-tool" data-tool="brush">Brush Tool</button>
-    <button class="btn btn-outline-dark layers-tool" data-tool="eraser">Eraser Tool</button>
-    
     <button class="btn btn-outline-dark layers-tool" data-tool="text">Text Tool</button>
     <button class="btn btn-outline-dark layers-tool" data-tool="shapes">Shape Tools</button>
-  </div>
+          <div class="mt-3 p-3 border rounded bg-light" id="layers-tool-steps">
+            <h6>Select a tool to see steps.</h6>
+          </div>
+</div>
 
-  <!-- Tool Steps -->
-  <div class="mt-4 p-3 border rounded bg-light" id="layers-tool-steps">
-    <h5>Select a tool to see steps.</h5>
+<!-- Fashion Toolbar Section -->
+<div id="retouch-toolbar-section" class="toolbar-section" style="display:none;">
+          <h3>Pamplet print on black box</h3>
+          <button class="btn btn-outline-dark fashion-tool" data-tool="spot-healing">Spot Healing Brush Tool</button>
+    <button class="btn btn-outline-dark fashion-tool" data-tool="healing-brush">Healing Brush Tool</button>
+    <button class="btn btn-outline-dark fashion-tool" data-tool="patch">Patch Tool</button>
+    <button class="btn btn-outline-dark fashion-tool" data-tool="clone-stamp">Clone Stamp Tool</button>
+    <button class="btn btn-outline-dark fashion-tool" data-tool="dodge">Dodge Tool</button>
+    <button class="btn btn-outline-dark fashion-tool" data-tool="burn">Burn Tool</button>
+    <button class="btn btn-outline-dark fashion-tool" data-tool="liquify">Liquify Filter</button>
+    <button class="btn btn-outline-dark fashion-tool" data-tool="content-aware">Content-Aware Fill</button>
+          <div class="mt-3 p-3 border rounded bg-light" id="retouch-tool-steps">
+            <h6>Select a tool to see steps.</h6>
+          </div>
+        </div>
   </div>
+</div>
+
+    <!-- Topic Buttons -->
+    <div id="topics-container" class="d-flex flex-wrap justify-content-center gap-2"></div>
 </section>
+
 
 <!-- Fashion Toolbar Section -->
 <section class="container my-5" id="fashion-toolbar-section" style="display:none;">
@@ -134,9 +152,6 @@
     <button class="btn btn-outline-dark fashion-tool" data-tool="dodge">Dodge Tool</button>
     <button class="btn btn-outline-dark fashion-tool" data-tool="burn">Burn Tool</button>
     <button class="btn btn-outline-dark fashion-tool" data-tool="liquify">Liquify Filter</button>
-    <button class="btn btn-outline-dark fashion-tool" data-tool="blur">Blur Tool</button>
-    <button class="btn btn-outline-dark fashion-tool" data-tool="sharpen">Sharpen Tool</button>
-    <button class="btn btn-outline-dark fashion-tool" data-tool="smudge">Smudge Tool</button>
     <button class="btn btn-outline-dark fashion-tool" data-tool="content-aware">Content-Aware Fill</button>
     <button class="btn btn-outline-dark fashion-tool" data-tool="camera-raw">Camera Raw Filter</button>
     <button class="btn btn-outline-dark fashion-tool" data-tool="adjustment-layers">Adjustment Layers</button>
